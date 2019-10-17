@@ -1,7 +1,7 @@
 # frozen_string_literal: false
 
-require 'chunky_png'
-require 'cell'
+require "chunky_png"
+require "cell"
 
 # Represents a maze grid
 class Grid
@@ -68,17 +68,17 @@ class Grid
   end
 
   def to_s
-    output = '+' + '---+' * columns + "\n"
+    output = "+" + "---+" * columns + "\n"
     each_row do |row|
-      top = '|'
-      bottom = '+'
+      top = "|"
+      bottom = "+"
 
       row.each do |cell|
         cell ||= Cell.new(-1, -1)
-        east_boundary = (cell.linked?(cell.east) ? ' ' : '|')
-        top << '   ' << east_boundary
-        south_boundary = (cell.linked?(cell.south) ? '   ' : '---')
-        bottom << south_boundary << '+'
+        east_boundary = (cell.linked?(cell.east) ? " " : "|")
+        top << "   " << east_boundary
+        south_boundary = (cell.linked?(cell.south) ? "   " : "---")
+        bottom << south_boundary << "+"
       end
 
       output << top << "\n"
