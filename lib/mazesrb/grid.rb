@@ -92,6 +92,10 @@ class Grid
     output
   end
 
+  def background_color_for(cell)
+    nil
+  end
+
   def to_png(cell_size: 10)
     img_width = cell_size * columns
     img_height = cell_size * rows
@@ -121,5 +125,14 @@ class Grid
     end
 
     img
+  end
+
+  def deadends
+    list = []
+    each_cell do |cell|
+      list << cell if cell.links.count == 1
+    end
+
+    list
   end
 end
