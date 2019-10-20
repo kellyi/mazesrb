@@ -1,7 +1,7 @@
 # frozen_string_literal: false
 
 require "chunky_png"
-require "cell"
+require_relative "./cell"
 
 # Represents a maze grid
 class Grid

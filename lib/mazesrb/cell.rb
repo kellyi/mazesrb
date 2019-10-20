@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "distances"
+require_relative "./distances"
 
 # Represents cells within a maze grid
 class Cell
