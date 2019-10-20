@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "distances"
+
 # Represents cells within a maze grid
 class Cell
   attr_reader :row, :column
@@ -33,5 +35,26 @@ class Cell
 
   def neighbors
     [north, south, east, west].compact
+  end
+
+  def distances
+    distances = Distances.new(self)
+    frontier = [self]
+
+    while frontier.any?
+      new_frontier = []
+      frontier.each do |cell|
+        cell.links.each do |linked|
+          next if distances[linked]
+
+          distances[linked] = distances[cell] + 1
+          new_frontier << linked
+        end
+      end
+
+      frontier = new_frontier
+    end
+
+    distances
   end
 end

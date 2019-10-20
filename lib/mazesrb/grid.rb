@@ -67,6 +67,10 @@ class Grid
     end
   end
 
+  def contents_of(_)
+    " "
+  end
+
   def to_s
     output = "+" + "---+" * columns + "\n"
     each_row do |row|
@@ -75,8 +79,9 @@ class Grid
 
       row.each do |cell|
         cell ||= Cell.new(-1, -1)
+        body = " #{contents_of(cell)} "
         east_boundary = (cell.linked?(cell.east) ? " " : "|")
-        top << "   " << east_boundary
+        top << body << east_boundary
         south_boundary = (cell.linked?(cell.south) ? "   " : "---")
         bottom << south_boundary << "+"
       end
