@@ -1,8 +1,8 @@
 # frozen_string_literal = true
 
 # another maze generation algorithm
-class HuntAndKill
-  def self.on(grid)
+module HuntAndKill
+  def HuntAndKill.generate_maze!(grid)
     current = grid.random_cell
     has_any_links = lambda { |n| n.links.any? }
 

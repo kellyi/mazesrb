@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # Another maze creation algorithm
-class AldousBroder
-  def self.on(grid)
+module AldousBroder
+  def AldousBroder.generate_maze!(grid)
     cell = grid.random_cell
     unvisited = grid.size.pred
 

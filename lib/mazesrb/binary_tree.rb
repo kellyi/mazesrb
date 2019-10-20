@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # Binary tree maze generation algorithm
-class BinaryTree
-  def self.on(grid)
+module BinaryTree
+  def BinaryTree.generate_maze!(grid)
     grid.each_cell do |cell|
       neighbors = []
       neighbors << cell.north if cell.north

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # Sidewinder maze generation algorithm
-class Sidewinder
-  def self.on(grid)
+module Sidewinder
+  def Sidewinder.generate_maze!(grid)
     grid.each_row do |row|
       run = []
 

@@ -5,7 +5,7 @@ require "aldous_broder"
 
 6.times do |n|
   grid = ColoredGrid.new(20, 20)
-  AldousBroder.on(grid)
+  AldousBroder::generate_maze!(grid)
 
   middle = grid[grid.rows / 2, grid.columns / 2]
   grid.distances = middle.distances

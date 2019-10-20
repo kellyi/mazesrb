@@ -4,7 +4,7 @@ require "grid"
 require "wilsons"
 
 grid = Grid.new(20, 20)
-Wilsons.on(grid)
+Wilsons::generate_maze!(grid)
 
 filename = "wilsons.png"
 grid.to_png.save(filename)

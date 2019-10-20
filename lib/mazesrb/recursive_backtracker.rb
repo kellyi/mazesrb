@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# another maze generation algorithm
-class RecursiveBacktracker
-  def self.on(grid, start_at: grid.random_cell)
+# another maze generat.generate_maze algorithm
+module RecursiveBacktracker
+  def RecursiveBacktracker.generate_maze!(grid, start_at: grid.random_cell)
     stack = []
     stack.push start_at
 

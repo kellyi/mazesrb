@@ -6,8 +6,9 @@ require "sidewinder"
 require "aldous_broder"
 require "wilsons"
 require "hunt_and_kill"
+require "recursive_backtracker"
 
-algorithms = [BinaryTree, Sidewinder, AldousBroder, Wilsons, HuntAndKill]
+algorithms = [BinaryTree, Sidewinder, AldousBroder, Wilsons, HuntAndKill, RecursiveBacktracker]
 
 tries = 100
 size = 20
@@ -21,7 +22,7 @@ algorithms.each do |algorithm|
 
   tries.times do
     grid = Grid.new(size, size)
-    algorithm.on(grid)
+    algorithm::generate_maze!(grid)
     deadend_counts << grid.deadends.count
   end
 

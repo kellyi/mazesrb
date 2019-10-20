@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # another maze generation algorithm
-class Wilsons
-  def self.on(grid)
+module Wilsons
+  def Wilsons.generate_maze!(grid)
     unvisited = []
     grid.each_cell { |cell| unvisited << cell }
 
